@@ -1,0 +1,272 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'monaco';
+    
+}
+body{
+    /* background-color: #000000; */
+    /* color: white; */
+    overflow-x: hidden;
+}
+header img {
+    width: 60%;
+    border-radius: 10px;
+}
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background: yellow;
+    /* padding: 40px; */
+    z-index: 100;
+
+}
+header .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+header .header-left .logo {
+    width: 180px;
+}
+header .header-left nav {
+    /* margin-left: 150px; */
+    width: 550vh;
+    display: flex;
+    
+}
+header .header-left nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+nav ul li a {
+    display: block;
+    /* color: #cfd9e0; */
+    color: #000000;
+    font-size: 25px;
+    padding-right: 10px;
+    transition: 0.2s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    color: rgb(120, 120, 120);
+}
+
+header .header-right {
+    display: flex;
+    align-items: center;
+}
+
+header .header-right .hamburger {
+    margin-left: 20px;
+    cursor: pointer;
+   
+    display: none;
+}
+header .header-right .hamburger div {
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #fff;
+}
+#upNav{
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 80%;
+    padding-right: 8%;
+    padding-top: 5px;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+#upNav> button{
+    color: #fff;
+    background-color: red;
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.header-left{
+    display: flex;
+   justify-content: center;
+}
+/* header end */
+#mid {
+    text-align: center;
+}
+#mid h2{
+    font-size:  2em;
+    text-decoration: underline;
+}
+.bookNow{
+    background-color: red;
+    padding: 5px;
+    border: 0px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+}
+.offerSec{
+    width: 80vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.offerSec>div{
+    border: 1px solid silver;
+}
+.exploreAdv{
+    
+    text-align: justify;
+    width: 80vw;
+    margin: auto;
+    margin-top:50px ;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.exploreAdv>div{
+    border: 1px solid silver;
+    padding: 10px;
+}
+.exploreAdv h3{
+    text-align: center;
+}
+
+/* footer start */
+.parentFoot{
+    margin-top: 5px;
+    padding: 50px;
+    background-color: rgb(37, 34, 37);
+    
+    opacity: 98%;
+    }
+    .parentFoot p{
+    color: gold;
+    }
+    .childFoot{
+    display: flex;
+    justify-content: center;
+    }
+    .childFoot>div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    text-align: justify;
+    margin: 5px;
+    }
+    .childFoot>div a{
+    color: white;
+    margin: 5px;
+    }
+    .childFoot>div>div{
+    color: white;
+    margin: 5px;
+    }
+    .parentFoot{
+        width: 100vw;
+    }
+    .parentFoot>div:nth-child(1){
+    padding: 10px;
+    width:15vw;
+    margin: auto;
+    }
+    .parentFoot>div:nth-child(1)>a>img{
+    width:100%;
+    }
+    .parentFoot button{
+    background-color: rgb(253, 124, 124);
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    }
+    .parentFoot>div:nth-child(2) input{
+    border: 0px;
+    background-color: rgb(250, 250, 224);
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    }
+@media only screen and (max-width: 1000px) {
+    header {
+        padding: 0 20px;
+    }
+    header .header-right .hamburger {
+        display: block;
+    }
+    header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color:yellow;
+        padding: 30px;
+        transition: 0.3s;
+        text-align: center;
+        z-index: -1;
+    }
+    header .header-left nav.active {
+        top: 120px;
+    }
+    header .header-left nav ul {
+        display: block;
+    }
+    #upNav{
+padding-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    nav .login-signup {
+        display: block;
+        margin-top: 20px;
+    }
+    header .header-right .login-signup {
+        display: none;
+    }
+    header .header-left .logo {
+        width: 100px;
+    }
+   
+    .parentFoot div{
+        justify-content: center;
+        margin: auto;
+      }
+      .parentFoot{
+        padding: 0;
+      }
+      .childFoot{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+     
+      .childFoot>div:nth-child(3){
+
+        display: flex;
+        flex-wrap: wrap;
+        width: 80vw;   
+        }
+      
+        .childFoot>div:nth-child(3) input{
+            width: 50vw;
+            }
+    
+}
