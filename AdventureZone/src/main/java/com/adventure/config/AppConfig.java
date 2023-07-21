@@ -40,15 +40,15 @@ public class AppConfig {
 					return configuration;
 				}
 			});
-        }) .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST , "/users").permitAll()
+        }) .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST , "/customers").permitAll()
 				.requestMatchers("/swagger-ui*/**","/v3/api-docs/**").permitAll()
 				.requestMatchers("/logini").hasAnyRole("ADMIN" , "USER")
 				.requestMatchers("/hello").hasRole("ADMIN")
-				.requestMatchers(HttpMethod.POST, "/movies").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.GET, "/customers_list").hasRole("ADMIN")
 				.anyRequest().authenticated())
 				.csrf(csrf -> csrf.disable())
-				// .addFilterAfter(new JwtTokenGeneratorFilter(), BasicAuthenticationFilter.class)
-				// .addFilterBefore(new JwtTokenValidatorFilter(), BasicAuthenticationFilter.class)
+				 .addFilterAfter(new JwtTokenGeneratorFilter(), BasicAuthenticationFilter.class)
+				 .addFilterBefore(new JwtTokenValidatorFilter(), BasicAuthenticationFilter.class)
 				.formLogin(Customizer.withDefaults())
 				.httpBasic(Customizer.withDefaults());
 		

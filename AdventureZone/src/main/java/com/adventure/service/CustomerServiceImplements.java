@@ -1,23 +1,17 @@
 package com.adventure.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.adventure.exception.CustomerException;
 import com.adventure.exception.NoRecordFoundException;
-import com.adventure.model.Admin;
 import com.adventure.model.Customer;
-import com.adventure.repository.ActivityRespository;
-import com.adventure.repository.AdminRespository;
-import com.adventure.repository.CategoryRespository;
 import com.adventure.repository.CustomerRespository;
-import com.adventure.repository.TicketRespository;
 
 
 @Service
@@ -34,7 +28,7 @@ public class CustomerServiceImplements implements CustomerServiceInterface {
 	public Customer rsegisterCustomer(Customer customer) {
 		
 		if(customer==null) throw new CustomerException("The customer you have provided is null");
-		Optional<Customer> cus = customerRepositry.FindByEmail(customer.getEmail());
+		Optional<Customer> cus = customerRepositry.findByEmail(customer.getEmail());
 		if(cus.isPresent()) throw new CustomerException("Customer already exists");
 		
 		return customerRepositry.save(customer);
@@ -53,7 +47,7 @@ public class CustomerServiceImplements implements CustomerServiceInterface {
 	}
 
 	@Override
-	public Customer DeleteCustomer(Integer customerId) {
+	public void DeleteCustomer(Integer customerId) {
 
 		Customer cus = customerRepositry.findById(customerId).orElseThrow(() -> new NoRecordFoundException("No record found with the given id "+customerId));
 		if(cus.isDeleted()==true) throw new CustomerException("Customer is already deleted");
@@ -66,15 +60,20 @@ public class CustomerServiceImplements implements CustomerServiceInterface {
 
 		List<Customer> customers = customerRepositry.findAll();
 		if(customers.isEmpty()) throw new NoRecordFoundException("Customer list is empty");
-		
-		return customers;
+		List<Customer> cus = new ArrayList<>();
+		for(Customer c : customers) {
+			if(c.getRole().equals("ROLE_USER")) {
+				cus.add(c);
+			}
+		}
+		return cus;
 	}
 
 	@Override
 	public Customer validateCustomer(String username, String password) {
 
 		if(username==null || password==null) throw new CustomerException("Invalid credentials");
-		Customer customer = customerRepositry.FindByEmail(username).get();
+		Customer customer = customerRepositry.findByEmail(username).get();
 
 		if(pe.matches(password, customer.getPassword())){
 			return customer;

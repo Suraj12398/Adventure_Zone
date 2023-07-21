@@ -53,4 +53,16 @@ public class ActivityServiceImplements implements ActivityServiceInterface {
 		return activity;
 	}
 
+	@Override
+	public List<Activity> viewActivityofCharges(double activityCharges) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer countActivityofCharges(double activityCharges) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

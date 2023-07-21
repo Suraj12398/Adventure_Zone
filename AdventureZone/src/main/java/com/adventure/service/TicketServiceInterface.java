@@ -11,5 +11,6 @@ public interface TicketServiceInterface {
 	public Ticket updateTicket(Integer ticketId,Ticket ticket);
 	public void DeleteTicket(Integer ticketId);
 	public List<Ticket> viewAllticket();
+	public double calculateBill(Integer custmerId);
 	
 }

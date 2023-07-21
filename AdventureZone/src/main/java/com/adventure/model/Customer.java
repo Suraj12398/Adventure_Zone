@@ -25,7 +25,7 @@ public class Customer extends AbtractUser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer customerId;
 	
-	@NotBlank(message = "age is mandatory")
+	//@NotBlank(message = "age is mandatory")
 	private int age;
 
 	public Customer(Integer userId, String username, String password, String address, String mobNumber, String email,
