@@ -1,5 +1,7 @@
 package com.adventure.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.adventure.exception.CustomerException;
 import com.adventure.exception.NoRecordFoundException;
+import com.adventure.model.Activity;
 import com.adventure.model.Admin;
 import com.adventure.model.Customer;
 import com.adventure.repository.AdminRespository;
@@ -50,6 +53,30 @@ public class AdminServiceImplements implements AdminServiceInterface {
 	public List<Admin> viewAlladmin() {
 		List<Admin> admin = adminRepositry.findAll();
 		if(admin.isEmpty()) throw new NoRecordFoundException("Admin list is empty");
+		return null;
+	}
+
+	@Override
+	public List<Activity> viewAllactivity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Activity> viewAllactivityCustomerwise(Integer customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Activity> viewAllactivitydatewise(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Activity> viewAllactivityforDays(Integer customerId, LocalDateTime fromDate, LocalDateTime enddate) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
