@@ -36,6 +36,6 @@ public class Category {
 	private List<Activity> activities = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "category")
-	private Ticket ticket;
+	private List<Ticket>  ticket;
 
 }

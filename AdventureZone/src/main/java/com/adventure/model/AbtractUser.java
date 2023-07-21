@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Min;
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@MappedSuperclass
 public class AbtractUser {
 	
 	@Min(value = 1)
@@ -36,7 +38,7 @@ public class AbtractUser {
 	
 	@NotNull(message = "password is mandatory")
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-	@Size(min = 4 , max = 8, message = "password must be between 4-8 alphanumeric")
+	//@Size(min = 4 , max = 8, message = "password must be between 4-8 alphanumeric")
 	private String password;
 	
 	@NotBlank
@@ -54,13 +56,14 @@ public class AbtractUser {
 	
 	@CreationTimestamp
 	@Column(nullable = false, updatable = false)
-	private LocalDateTime createdDate;
+	private LocalDateTime createdDate=LocalDateTime.now();
 	
+	@Column(nullable = true)
 	@UpdateTimestamp
 	private LocalDateTime updatedDT;
 	
-	@Column(nullable = false)
-	private boolean isDeleted;
+	//@Column(nullable = true)
+	private boolean isDeleted=false;
 	
 	@Future
 	@Column(nullable = true)
@@ -68,7 +71,6 @@ public class AbtractUser {
 	
 	@NotNull(message = "role is mandatory")
 	@NotBlank
-	@Enumerated(EnumType.STRING)
 	private String role;
 
 }

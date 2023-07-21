@@ -1,5 +1,6 @@
 package com.adventure.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +28,7 @@ public class CustomerServiceImplements implements CustomerServiceInterface {
 	public Customer rsegisterCustomer(Customer customer) {
 		
 		if(customer==null) throw new CustomerException("The customer you have provided is null");
-		Optional<Customer> cus = customerRepositry.FindByEmail(customer.getEmail());
+		Optional<Customer> cus = customerRepositry.findByEmail(customer.getEmail());
 		if(cus.isPresent()) throw new CustomerException("Customer already exists");
 		
 		return customerRepositry.save(customer);
@@ -59,15 +60,20 @@ public class CustomerServiceImplements implements CustomerServiceInterface {
 
 		List<Customer> customers = customerRepositry.findAll();
 		if(customers.isEmpty()) throw new NoRecordFoundException("Customer list is empty");
-		
-		return customers;
+		List<Customer> cus = new ArrayList<>();
+		for(Customer c : customers) {
+			if(c.getRole().equals("ROLE_USER")) {
+				cus.add(c);
+			}
+		}
+		return cus;
 	}
 
 	@Override
 	public Customer validateCustomer(String username, String password) {
 
 		if(username==null || password==null) throw new CustomerException("Invalid credentials");
-		Customer customer = customerRepositry.FindByEmail(username).get();
+		Customer customer = customerRepositry.findByEmail(username).get();
 
 		if(pe.matches(password, customer.getPassword())){
 			return customer;

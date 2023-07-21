@@ -6,15 +6,17 @@ import java.util.List;
 
 import com.adventure.model.Activity;
 import com.adventure.model.Admin;
+import com.adventure.model.Customer;
 
 public interface AdminServiceInterface {
 	
 	public Admin rsegisterAdmin(Admin admin);
 	public Admin updateAdmin(Integer adminId,Admin admin);
 	public void DeleteAdmin(Integer adminId);
-	public List<Admin> viewAlladmin();
+	public List<Customer> viewAllCustomer();
+	public List<Activity> viewAllCustomerActivity(Integer customerId);
 	public List<Activity> viewAllactivity();
-	public List<Activity> viewAllactivityCustomerwise(Integer customerId);
+	public List<Activity> viewAllactivityCustomerwise();
 	public List<Activity> viewAllactivitydatewise(LocalDate date);
 	public List<Activity> viewAllactivityforDays(Integer customerId,LocalDateTime fromDate,LocalDateTime enddate);
 
