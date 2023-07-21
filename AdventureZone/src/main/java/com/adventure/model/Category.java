@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category {
+public class Category implements Comparable<Category> {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +38,9 @@ public class Category {
 	@OneToMany(mappedBy = "category")
 	private List<Ticket>  ticket;
 
+	@Override
+    public int compareTo(Category otherCategory) {
+        // Compare the category names in ascending order
+        return this.catName.compareTo(otherCategory.catName);
+    }
 }
