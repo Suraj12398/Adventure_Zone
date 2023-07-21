@@ -7,25 +7,34 @@
     font-family: 'monaco';
     
 }
+h1{
+    font: bold;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 30px;
+}
 body{
     /* background-color: #000000; */
     /* color: white; */
     overflow-x: hidden;
 }
 header img {
-    width: 60%;
+    width: 100%;
     border-radius: 10px;
+   
 }
 header {
-    height: 70px;
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
+    position: fixed;
+    justify-content: space-around;
+    /* padding: 0 50px; */
     background: yellow;
     /* padding: 40px; */
     z-index: 100;
-
+    border: 1px solid black;
+   width: 100vw;
+    padding-right: 10px;
 }
 header .header-left {
     display: flex;
@@ -34,11 +43,12 @@ header .header-left {
     z-index: 100;
 }
 header .header-left .logo {
-    width: 180px;
+    width: 120px;
+    padding-top: 10px;
 }
 header .header-left nav {
     /* margin-left: 150px; */
-    width: 550vh;
+    width: 70vw;
     display: flex;
     
 }
@@ -51,7 +61,7 @@ nav ul li a {
     display: block;
     /* color: #cfd9e0; */
     color: #000000;
-    font-size: 25px;
+    font-size: 1.2em;
     padding-right: 10px;
     transition: 0.2s;
 }
@@ -63,6 +73,7 @@ nav ul li a.active {
 header .header-right {
     display: flex;
     align-items: center;
+    width: 60%;
 }
 
 header .header-right .hamburger {
@@ -81,11 +92,7 @@ header .header-right .hamburger div {
     background-color: yellow;
     display: flex;
     justify-content: space-between;
-    padding-left: 80%;
-    padding-right: 8%;
-    padding-top: 5px;
-    width: 100vw;
-    flex-wrap: wrap;
+    
 }
 #upNav> button{
     color: #fff;
@@ -96,18 +103,26 @@ header .header-right .hamburger div {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 5px;
 }
 .header-left{
     display: flex;
    justify-content: center;
 }
 /* header end */
+
+
 #mid {
     text-align: center;
 }
+#videoTag{
+    padding-top: 60px; ;
+}
 #mid h2{
-    font-size:  2em;
+    font-size:  2.5em;
     text-decoration: underline;
+    margin: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .bookNow{
     background-color: red;
@@ -122,29 +137,74 @@ header .header-right .hamburger div {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    justify-content: center;
     gap: 10px;
+   
 }
 .offerSec>div{
     border: 1px solid silver;
+    padding-bottom: 5px;
+}
+.offerSec>div>div{
+    overflow: hidden;
+}
+.offerSec button{
+    display: block;
+    margin: auto;
+    background-color: #1476b2;
+    color: #fff;
+    padding: 5px;
+    border: 0px;
+    border-radius: 2px;
+}
+
+.offerSec>div>div>img{
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+.offerSec>div:hover img{
+   
+    transform: scale(1.1);
 }
 .exploreAdv{
-    
     text-align: justify;
-    width: 80vw;
+    width: 90vw;
     margin: auto;
     margin-top:50px ;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,35vw);
+    overflow-x: scroll;
     gap: 30px;
+}
+.exploreAdv::-webkit-scrollbar{
+    width: 0;
 }
 .exploreAdv>div{
     border: 1px solid silver;
     padding: 10px;
 }
+.exploreAdv>div>img{
+    width: 100%;
+}
 .exploreAdv h3{
     text-align: center;
 }
-
+.exploreAdv button{
+    display: block;
+    margin: auto;
+    background-color: #1476b2;
+    color: #fff;
+    padding: 5px;
+    border: 0px;
+    border-radius: 2px;
+}
+.imageBanner{
+    margin-top: 50px;
+    width: 100vw;
+}
+.imageBanner img{
+width: 100%;
+}
 /* footer start */
 .parentFoot{
     margin-top: 5px;
@@ -222,7 +282,7 @@ header .header-right .hamburger div {
         z-index: -1;
     }
     header .header-left nav.active {
-        top: 120px;
+        top: 100px;
     }
     header .header-left nav ul {
         display: block;
