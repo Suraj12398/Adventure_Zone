@@ -15,4 +15,5 @@ public interface ActivityRespository  extends JpaRepository<Activity, Integer> {
 //	List<Activity> findByCustomerAndDateBetween(Integer customerId, LocalDateTime fromDate, LocalDateTime endDate);
 
 //	List<Activity> findAllByCustomerId(Integer customerId);
+	
 }

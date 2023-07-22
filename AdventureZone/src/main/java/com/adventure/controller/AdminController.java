@@ -9,7 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,8 +48,9 @@ public class AdminController {
         return new ResponseEntity<Admin>(cus, HttpStatus.CREATED);
 
     }
-
-    public ResponseEntity<Admin> updateAdmin(Integer adminId, Admin admin) {
+    
+    @PutMapping("/admins/{adminId}")
+    public ResponseEntity<Admin> updateAdmin(@PathVariable Integer adminId, @RequestBody Admin admin) {
     	Admin adm= adminService.updateAdmin(adminId, admin);
         return new ResponseEntity<Admin>(adm, HttpStatus.ACCEPTED);
     }
