@@ -7,7 +7,7 @@
     font-family: 'monaco';
     
 }
-h1{
+.indexPage h1{
     font: bold;
     font-family: 'Courier New', Courier, monospace;
     margin: 30px;
@@ -32,9 +32,10 @@ header {
     background: yellow;
     /* padding: 40px; */
     z-index: 100;
-    border: 1px solid black;
+    border: 1px solid silver;
    width: 100vw;
     padding-right: 10px;
+    padding-top: 2px;
 }
 header .header-left {
     display: flex;
@@ -79,7 +80,6 @@ header .header-right {
 header .header-right .hamburger {
     margin-left: 20px;
     cursor: pointer;
-   
     display: none;
 }
 header .header-right .hamburger div {
@@ -105,6 +105,17 @@ header .header-right .hamburger div {
     text-overflow: ellipsis;
     margin: 5px;
 }
+#user{
+    display: flex;
+    min-width: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+#user p{
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
 .header-left{
     display: flex;
    justify-content: center;
@@ -208,9 +219,8 @@ width: 100%;
 /* footer start */
 .parentFoot{
     margin-top: 5px;
-    padding: 50px;
+    /* padding: 50px; */
     background-color: rgb(37, 34, 37);
-    
     opacity: 98%;
     }
     .parentFoot p{
@@ -239,12 +249,12 @@ width: 100%;
     .parentFoot{
         width: 100vw;
     }
-    .parentFoot>div:nth-child(1){
-    padding: 10px;
+    .navbarBrand{
+    /* padding: 10px; */
     width:15vw;
     margin: auto;
     }
-    .parentFoot>div:nth-child(1)>a>img{
+    .navbarBrand>img{
     width:100%;
     }
     .parentFoot button{
@@ -271,7 +281,7 @@ width: 100%;
     header .header-left nav {
         margin: 0;
         position: absolute;
-        top: -100%;
+        top: -300%;
         left: 0;
         width: 100%;
         height: fit-content;
@@ -282,13 +292,13 @@ width: 100%;
         z-index: -1;
     }
     header .header-left nav.active {
-        top: 100px;
+        top: 50px;
     }
     header .header-left nav ul {
         display: block;
     }
     #upNav{
-padding-left: 10%;
+        padding-left: 10%;
     }
 }
 
