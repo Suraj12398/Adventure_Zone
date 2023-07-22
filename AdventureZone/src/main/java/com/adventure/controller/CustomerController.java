@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adventure.model.Customer;
@@ -21,6 +22,7 @@ import jakarta.validation.Valid;
 
 
 @RestController
+@RequestMapping("/customers")
 public class CustomerController {
 
     @Autowired
@@ -32,7 +34,7 @@ public class CustomerController {
     @Autowired
     private PasswordEncoder pe;
 
-    @PostMapping("/customers")
+    @PostMapping("/add")
     public ResponseEntity<Customer> rsegisterCustomer(@Valid @RequestBody Customer customer) {
     	customer.setRole("ROLE_"+customer.getRole().toUpperCase());
         customer.setPassword(pe.encode(customer.getPassword()));
@@ -67,7 +69,7 @@ public class CustomerController {
         return new ResponseEntity<Customer>(cus, HttpStatus.CREATED);
     }
     
-    @GetMapping("/logini")
+    @GetMapping("/signIn")
 	public ResponseEntity<Customer> logInUserHandler(Authentication auth){
 		 Optional<Customer> opt= customerRepositry.findByEmail(auth.getName());
 		 if(opt.isEmpty()) throw new RuntimeException("No user found");
