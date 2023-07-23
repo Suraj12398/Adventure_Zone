@@ -9,15 +9,12 @@
 <link rel="stylesheet" href="/AdventureZone(frontend)/stylesheets/index.css">
 <link rel="stylesheet" href="/AdventureZone(frontend)/stylesheets/admin.css">
 <body>
-    <!-- <div id="upNav">
-        <button>Sign In</button>
-        <button>Register</button>
-    </div> -->
+    
     <header>
         
         <div class="header-left">
             <div class="logo">
-               <a href="/AdventureZone(frontend)/index.html"><img src="/AdventureZone(frontend)/Images/adventureZoneBW.png" alt=""></a> 
+               <a href="/AdventureZone(frontend)/index.html"><img src="./Images/adventureZoneBW.png" alt=""></a> 
             </div>
             <nav>
                 <ul>
@@ -25,29 +22,27 @@
                         <a href="" class="active"></a>
                     </li>
                     <li>
-                        <a href="">View All Customers</a>
+                        <a href="/AdventureZone(frontend)/html/booking.html">Tickets</a>
                     </li>
                     <li>
-                        <a href="">Transaction History</a>
+                        <a href="">Offers</a>
                     </li>
                     <li>
-                        <a href="">View All Activities</a>
+                        <a href="">About</a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <a href="">Know more</a>
                     </li>
                     <li>
                         <a href="">Help</a>
-                    </li> -->
+                    </li>
                     
                 </ul>
+               
             </nav>
-            <div id="user" style="margin-left: 120px;">
-                <svg width="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="9" r="3" stroke="#1C274C" stroke-width="1.5"></circle> <path d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
-                <p>Suraj Deosarkar</p>
-            </div>
+           
+           
         </div>
-        
         <div class="header-right">
             
             <div class="hamburger">
@@ -56,33 +51,42 @@
                 <div></div>
             </div>
         </div>
-        
+        <div id="upNav">
+            <!-- <button><a href="/AdventureZone(frontend)/html/customerSignIn.html">Sign In</a> </button> -->
+            <div id="user">
+                <svg width="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="9" r="3" stroke="#1C274C" stroke-width="1.5"></circle> <path d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                <p>Suraj Deosarkar</p>
+            </div>
+            <button><a href="/AdventureZone(frontend)/index.html">Logout</a></button>
+        </div>
     </header>
 <div id="top">
-    <h1>Welcome Back :- <span class="adminName">Admin Name</span></h1>
+    <h1>Welcome Back :- <span class="cusName">Customer Name</span></h1>
 </div>
 <div id="midAdmin">
     <div class="fun">
         <h1>Select</h1>
-        <!-- <button id="ticketsButton">Tickets</button> -->
-        <button id="categoryButton">Category</button>
-        <button id="activityButton">Activity</button>
+        <button id="ticketsButton">Tickets</button>
+        <button id="transactionHistory">Transactions</button>
         <button id="customerButton">Customer</button>
     </div>
-      
-    <div class="forms" id="categoryForm">
+    <div class="forms" id="ticketForm">
         <div id="">
-            <h1>Add category</h1>
+            <h1>Add Tickets</h1>
             <form action="">
-                <!-- <label>Category Id</label>
-                <input type="text" id="catName"> -->
+                <label>Name Of Ticket</label>
+                <input type="text" >
                 <label>Category Name</label>
-                <input type="text" id="catName">
-                <input type="button" value="Add Category" class="formSubmitButton" id="addCategoryButton">
+                <input type="text">
+                <label>Age Restriction</label>
+                <input type="text">
+                <label>Date</label>
+                <input type="text">
+                <input type="button" value="Add Ticket" class="formSubmitButton" id="addTicketButton">
             </form>
         </div>
         <div id="">
-            <h1>Update category</h1>
+            <h1>Update Tickets</h1>
             <form action="">
                 <label>Name Of Ticket</label>
                 <input type="text" >
@@ -96,7 +100,7 @@
             </form>
         </div>
         <div id="">
-            <h1>Delete category</h1>
+            <h1>Delete Tickets</h1>
             <form action="">
                 <label>Name Of Ticket</label>
                 <input type="text" >
@@ -109,55 +113,10 @@
                 <input type="button" value="SUBMIT" class="formSubmitButton">
             </form>
         </div>
-        
     </div>
-    <div class="forms" id="activityForm">
-        <div id="">
-            <h1>Add Activity</h1>
-            <form action="">
-                <label>Name Of Activity</label>
-                <input type="text" id="actName">
-                <label>Activity Charges</label>
-                <input type="text" id="actCharges">
-                <label>Category</label>
-                <input type="text" id="actCat">
-                <!-- <label>Date</label> -->
-                <!-- <input type="text"> -->
-                <input type="button" value="SUBMIT" id="actAddButton" class="formSubmitButton">
-            </form>
-        </div>
-        <div id="">
-            <h1>Update Activity</h1>
-            <form action="">
-                <label>Name Of Ticket</label>
-                <input type="text" >
-                <label>Category Name</label>
-                <input type="text">
-                <label>Age Restriction</label>
-                <input type="text">
-                <label>Date</label>
-                <input type="text">
-                <input type="button" value="SUBMIT" class="formSubmitButton">
-            </form>
-        </div>
-        <div id="">
-            <h1>Delete Activity</h1>
-            <form action="">
-                <label>Name Of Ticket</label>
-                <input type="text" >
-                <label>Category Name</label>
-                <input type="text">
-                <label>Age Restriction</label>
-                <input type="text">
-                <label>Date</label>
-                <input type="text">
-                <input type="button" value="SUBMIT" class="formSubmitButton">
-            </form>
-        </div>
-        
-    </div>
+   
     <div class="forms" id="customerForm">
-        <!-- <div id="">
+        <div id="">
             <h1>Add Customer</h1>
             <form action="">
                 <label>Name Of Ticket</label>
@@ -170,7 +129,7 @@
                 <input type="text">
                 <input type="button" value="SUBMIT" class="formSubmitButton">
             </form>
-        </div> -->
+        </div>
         <div id="">
             <h1>Update Customer</h1>
             <form action="">
@@ -200,6 +159,9 @@
             </form>
         </div>
         
+    </div>
+    <div id="cusTransactions">
+        <p>all data of transactions</p>
     </div>
 </div>
 
@@ -259,15 +221,9 @@
     </div>
 </footer>
 
-   <!-- Register
-   update 
-   delete
-   add Tickets(crud)
-   add activity(crud)
-   block Customers
-   add category(crud) -->
 
 </body>
 <script src="/AdventureZone(frontend)/scripts/index.js"></script>
-<script src="/AdventureZone(frontend)/scripts/admin.js"></script>
+<script src="/AdventureZone(frontend)/scripts/customer.js"></script>
+
 </html>
