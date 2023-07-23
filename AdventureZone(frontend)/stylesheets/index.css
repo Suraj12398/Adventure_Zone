@@ -4,8 +4,12 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'monaco';
+    font-family: Arial, sans-serif;
     
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 .indexPage h1{
     font: bold;

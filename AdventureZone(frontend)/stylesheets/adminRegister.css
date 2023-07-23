@@ -9,11 +9,13 @@ margin: auto;
 .adminRegDiv{
     width: 50vw;
     margin: auto;
-    
+    margin-top: 45px;
+    margin-bottom: 50px;
 }
 .adminRegDiv p{
   text-align: center;
 }
 .headReg{
+  padding-top: 100px;
     text-align: center;
 }

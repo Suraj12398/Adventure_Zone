@@ -1,0 +1,15 @@
+.categorySelection{
+    display: flex;
+    gap: 10px; 
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid silver;
+    margin: auto;
+}
+.categorySelection > label{
+display: flex;
+max-width: 100px;
+align-items: center;
+}
