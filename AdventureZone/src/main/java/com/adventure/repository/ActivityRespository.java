@@ -10,9 +10,10 @@ import com.adventure.model.Activity;
 
 
 public interface ActivityRespository  extends JpaRepository<Activity, Integer> {
-	 List<Activity> findByDate(LocalDate date);
+//	 List<Activity> findByDate(LocalDate date);
 
-	List<Activity> findByCustomerAndDateBetween(Integer customerId, LocalDateTime fromDate, LocalDateTime endDate);
+//	List<Activity> findByCustomerAndDateBetween(Integer customerId, LocalDateTime fromDate, LocalDateTime endDate);
 
-	List<Activity> findAllByCustomerId(Integer customerId);
+//	List<Activity> findAllByCustomerId(Integer customerId);
+	
 }

@@ -40,9 +40,9 @@ public class AppConfig {
 					return configuration;
 				}
 			});
-        }) .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST , "/customers").permitAll()
+        }) .authorizeHttpRequests(auth -> auth.requestMatchers( "/customers/add","/admins/add").permitAll()
 				.requestMatchers("/swagger-ui*/**","/v3/api-docs/**").permitAll()
-				.requestMatchers("/logini").hasAnyRole("ADMIN" , "USER")
+				.requestMatchers("/customers/signIn").hasRole("USER")
 				.requestMatchers("/hello").hasRole("ADMIN")
 				.requestMatchers(HttpMethod.GET, "/customers_list").hasRole("ADMIN")
 				.anyRequest().authenticated())
