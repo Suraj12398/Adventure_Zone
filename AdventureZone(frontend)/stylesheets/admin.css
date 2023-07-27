@@ -70,4 +70,15 @@
 #midAdmin .forms form .formSubmitButton:hover {
     background-color: rgb(47, 148, 248);
 }
-
+#userTable{
+    border: 1px solid black;
+    margin: auto;
+    border-collapse: collapse;
+    width: 60vw;
+    text-align: center;
+}
+#userTable th,
+#userTable td {
+  border: 1px solid black; 
+  padding: 8px;
+}

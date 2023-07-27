@@ -47,4 +47,55 @@ transactionButton.addEventListener("click", function () {
 // Show the ticketForm initially
 showForm(ticketForm);
 
-   
+//    -------------Start here----------
+
+
+const addTicketButton= document.getElementById("addTicketButton");
+
+let arr=["theme park","water park"];
+
+addTicketButton.addEventListener("click", bookTicket)
+
+async function bookTicket(){
+
+    let obj={
+        "ticketId": 0,
+  "price": 20.00,
+  "bookingDate": "",
+  "updatedDT": "",
+  "category": [
+    {
+      "categoryId": 1,
+      "catName": "Theme park",
+      "deleted": true
+    }
+  ],
+  "customer": {
+    "userId": 1,
+    "username": "string",
+    "password": "string",
+    "address": "string",
+    "mobNumber": "9918726020",
+    "email": "string",
+    "createdDate": "2023-07-24T03:36:22.740Z",
+    "updatedDT": "2023-07-24T03:36:22.740Z",
+    "deleteDT": "2023-07-24T03:36:22.740Z",
+    "role": "string",
+    "customerId": 0,
+    "age": 0,
+    "deleted": true
+  },
+  "expired": true
+    }
+    let fetchedData=await fetch('http://localhost:8080/adventureZone/tickets', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+    })
+    if(fetchedData.ok){
+        alert('Ticket Booked Sucessfully')
+        window.location.reload()
+    }
+}
