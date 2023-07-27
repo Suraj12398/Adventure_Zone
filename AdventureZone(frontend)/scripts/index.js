@@ -43,3 +43,6 @@ function autoScrollHorizontally(element, stepSize, interval) {
 
 // Call the autoScrollHorizontally function with the element to scroll, step size, and interval in milliseconds
 autoScrollHorizontally('.exploreAdv', 1.2, 30);
+
+
+
